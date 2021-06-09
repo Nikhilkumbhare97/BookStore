@@ -7,16 +7,18 @@
 
         <div class="tab">
             <label class="labels">
-                <a routerlink=".">
+                <a routerLink="/loginandSiginup/login">
                     <div class="login">
                         LOGIN
                     </div>
                 </a>
-                <div class="login">
-                    SIGNUP
-                </div>
+                <a routerLink="/loginandSiginup/signup">
+                    <div class="login">
+                        SIGNUP
+                    </div>
+                </a>
             </label>
-            <app-login></app-login>
+            <router-outlet></router-outlet>
         </div>
     </div>
 </div>
