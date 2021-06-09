@@ -8,11 +8,11 @@ import { UserLoginAndSignUpComponent } from './pages/user-login-and-sign-up/user
 const routes: Routes = [
   {
     path: "",
-    redirectTo: 'loginandSiginup',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: "loginandSiginup",
+    path: "",
     component: UserLoginAndSignUpComponent,
     children: [
       {path: "", redirectTo: "login", pathMatch: "full"},
