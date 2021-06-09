@@ -12,13 +12,18 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HeaderComponent } from './components/header/header.component';
+import { DashBoardComponent } from './pages/user-login-and-sign-up/dash-board/dash-board.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserLoginAndSignUpComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    HeaderComponent,
+    DashBoardComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

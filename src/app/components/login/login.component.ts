@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
           catch (error) {
           }
         });
-        this.router.navigate(['.']);
+        this.router.navigate(['/dashboard']);
     }
   }
 }
