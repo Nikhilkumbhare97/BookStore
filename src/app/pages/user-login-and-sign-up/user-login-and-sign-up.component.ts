@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-login-and-sign-up',
@@ -7,10 +7,16 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./user-login-and-sign-up.component.scss']
 })
 export class UserLoginAndSignUpComponent implements OnInit {
+  
+  
 
-  constructor() { }
+  constructor() {
+   
+  }
 
   ngOnInit(): void {
   }
+
+  
 
 }
