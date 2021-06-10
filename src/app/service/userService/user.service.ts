@@ -35,4 +35,9 @@ export class UserService {
   addBook(id : any,data : any){
     return this.http.post('add_cart_item/'+id,data,this.options)
   }
+
+  addToWishlist(id : any, data: any){
+    return this.http.post('add_wish_list/'+id,data,this.options)
+  }
+
 }

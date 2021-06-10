@@ -22,41 +22,54 @@ export class DisplayComponent implements OnInit {
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
   sorts: Sort[] = [
-    {value: 'lowtohigh', viewValue: 'Price: Low to High'},
-    {value: 'hightolow', viewValue: 'Price: Hight to Low'},
-    {value: 'new', viewValue: 'Newest'}
+    { value: 'lowtohigh', viewValue: 'Price: Low to High' },
+    { value: 'hightolow', viewValue: 'Price: Hight to Low' },
+    { value: 'new', viewValue: 'Newest' }
   ];
 
   ngOnInit(): void {
     this.getAllBooks();
   }
 
-  getAllBooks(){
-    this.user.getBooks().subscribe((res)=>{
+  getAllBooks() {
+    this.user.getBooks().subscribe((res) => {
       console.log(res);
       this.bookArray = res['result'];
-    },(error)=>{
+    }, (error) => {
       console.log(error);
     })
   }
 
-  addToCart(data){
+  addToCart(data) {
     console.log(data);
-
     let bookId = data._id;
-    let arr = []  as any;
-
+    let arr = [] as any;
     let reqObj = {
-      quantity : 1
+      quantity: 1
     }
     console.log(bookId);
-
-    this.user.addBook(bookId,reqObj).subscribe((res) => {
+    this.user.addBook(bookId, reqObj).subscribe((res) => {
       console.log(res)
       arr = res
       this.snackBar.open(arr.message, "Cancel");
-    },(error) => {
+    }, (error) => {
       console.log(error)
+      this.snackBar.open(arr.message, "Cancel");
+    })
+  }
+
+  addToWishList(data) {
+    let bookId = data._id;
+    let arr = [] as any
+    let reqObj = {
+      quantity: 1
+    }
+    this.user.addToWishlist(bookId, reqObj).subscribe((res) => {
+      console.log(res);
+      arr = res
+      this.snackBar.open(arr.message, "Cancel");
+    }, (error) => {
+      console.log(error);
       this.snackBar.open(arr.message, "Cancel");
     })
   }
