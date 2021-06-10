@@ -19,10 +19,10 @@
                     {{book.author}}
                 </div>
                 <div class="price">
-                    {{book.price}}
+                    Rs. {{book.price}}
                 </div>
                 <div fxLayout="row" fxLayoutAlign="space-between center">
-                    <button class="btn">Add to Cart</button>
+                    <button (click)="addToCart(book)" class="btn">Add to Cart</button>
                     <button class="btn1">Wishlist</button>
                 </div>
             </div>

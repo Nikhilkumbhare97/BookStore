@@ -31,4 +31,8 @@ export class UserService {
   getBooks(){
     return this.http.get('get/book',this.options);
   }
+
+  addBook(id : any,data : any){
+    return this.http.post('add_cart_item/'+id,data,this.options)
+  }
 }
