@@ -43,8 +43,7 @@ export class LoginComponent implements OnInit {
         this.openSnackBar('Login successful', 2000);
         console.log(response);
         array = response
-        console.log(array.id)
-        localStorage.setItem('id', array.id)
+        this.router.navigate(['/dashboard']);
       },
         error => {
           try {
@@ -58,7 +57,6 @@ export class LoginComponent implements OnInit {
           catch (error) {
           }
         });
-        this.router.navigate(['/dashboard']);
     }
   }
 }

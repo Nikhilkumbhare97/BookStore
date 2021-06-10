@@ -16,6 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DashBoardComponent } from './pages/user-login-and-sign-up/dash-board/dash-board.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
+import { DisplayComponent } from './components/display/display.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './components/footer/footer.component';
     SignUpComponent,
     HeaderComponent,
     DashBoardComponent,
-    FooterComponent
+    FooterComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,

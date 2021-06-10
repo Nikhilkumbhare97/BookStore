@@ -23,8 +23,12 @@ export class UserService {
   register(data : any){
     return this.http.post('registration',data,'')
   }
-  
+
   login(data : any){
     return this.http.post('login',data,'')
+  }
+
+  getBooks(){
+    return this.http.get('get/book',this.options);
   }
 }

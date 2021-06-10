@@ -13,4 +13,8 @@ export class HttpServiceService {
   post(url:any,data:any,token : any){
     return this.httpClient.post(this.baseUrl+url,data,token);
   }
+
+  get(url:any,token:any){
+    return this.httpClient.get(this.baseUrl+url,token);
+  }
 }

@@ -1,4 +1,8 @@
-
+::ng-deep clr-input-container .clr-control-container {
+    display: block;
+    width: 100%;
+  } 
+  
 #login-form{
     width: 100%;
     height: 80%;
@@ -38,4 +42,9 @@ span{
     font-size: smaller;
     color: black;
     font-weight: 500;
+}
+
+
+input{
+    width: 150px;
 }
