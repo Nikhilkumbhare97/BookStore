@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderComponent } from './components/header/header.component';
 import { DashBoardComponent } from './pages/user-login-and-sign-up/dash-board/dash-board.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginComponent,
     SignUpComponent,
     HeaderComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
