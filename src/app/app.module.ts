@@ -13,7 +13,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HeaderComponent } from './components/header/header.component';
-import { DashBoardComponent } from './pages/user-login-and-sign-up/dash-board/dash-board.component';
+import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisplayComponent } from './components/display/display.component';

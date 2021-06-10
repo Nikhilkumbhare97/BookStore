@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
         this.openSnackBar('Login successful', 2000);
         console.log(response);
         array = response
+        console.log(array.result.accessToken);
+        localStorage.setItem('userToken',array.result.accessToken)
         this.router.navigate(['/dashboard']);
       },
         error => {

@@ -8,9 +8,11 @@
 }
 
 .container{
+    padding-left: 10%;
+    padding-right: 10%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 

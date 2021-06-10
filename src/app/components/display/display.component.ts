@@ -31,11 +31,9 @@ export class DisplayComponent implements OnInit {
   }
 
   getAllBooks(){
-    let arr = [] as any;
     this.user.getBooks().subscribe((res)=>{
       console.log(res);
-      arr = res;
-      this.bookArray = arr.result;
+      this.bookArray = res['result'];
     },(error)=>{
       console.log(error);
     })
