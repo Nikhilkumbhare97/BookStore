@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
 @Component({
@@ -12,6 +12,15 @@ export class CartComponent implements OnInit {
   show = 1;
 
   constructor(private user : UserService,private snackBar: MatSnackBar) { }
+
+  openSnackBar(message: string, duration: number) {
+    let config = new MatSnackBarConfig();
+    if (duration != 0) {
+      config.duration = duration;
+    }
+    this.snackBar.open(message, undefined, config);
+  }
+
 
   cartArray = [] as any;
   length = 0;
@@ -46,7 +55,7 @@ export class CartComponent implements OnInit {
     
     this.user.deleteCartItem(id).subscribe((res : any) => {
       console.log(res)
-      this.snackBar.open(res.message, "Cancel");
+      this.openSnackBar(res.message, 2000);
       this.displayItems()
     },(error) => {
       console.log(error)

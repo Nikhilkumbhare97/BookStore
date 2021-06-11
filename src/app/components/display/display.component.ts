@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
 
@@ -15,11 +15,22 @@ interface Sort {
 })
 export class DisplayComponent implements OnInit {
 
+  byDefault = "default";
+
   selectedValue: string;
 
   bookArray = [] as any
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
+
+  openSnackBar(message: string, duration: number) {
+    let config = new MatSnackBarConfig();
+    if (duration != 0) {
+      config.duration = duration;
+    }
+    this.snackBar.open(message, undefined, config);
+  }
+
 
   sorts: Sort[] = [
     { value: 'lowtohigh', viewValue: 'Price: Low to High' },
@@ -51,11 +62,12 @@ export class DisplayComponent implements OnInit {
     this.user.addBook(bookId, reqObj).subscribe((res) => {
       console.log(res)
       arr = res
-      this.snackBar.open(arr.message, "Cancel");
+      this.openSnackBar(arr.message, 2000);
     }, (error) => {
       console.log(error)
-      this.snackBar.open(arr.message, "Cancel");
+      this.openSnackBar(arr.message, 2000);
     })
+
   }
 
   addToWishList(data) {
@@ -67,10 +79,10 @@ export class DisplayComponent implements OnInit {
     this.user.addToWishlist(bookId, reqObj).subscribe((res) => {
       console.log(res);
       arr = res
-      this.snackBar.open(arr.message, "Cancel");
+      this.openSnackBar(arr.message, 2000);
     }, (error) => {
       console.log(error);
-      this.snackBar.open(arr.message, "Cancel");
+      this.openSnackBar(arr.message, 2000);
     })
   }
 }

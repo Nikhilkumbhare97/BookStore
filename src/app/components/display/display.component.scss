@@ -4,7 +4,7 @@
     border: 2px black;
     border-radius: 5px;
     width: 100%;
-    height: 100%;
+    height: 89%;
     flex: 1;
     overflow-y: scroll;
 }
@@ -20,16 +20,14 @@
 .sort{
     width: 15%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around
 }
 
 .sectiontwo{
-    width: 98%;
+    width: 96%;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    padding-top: 2%;
 }
 
 .content-card{
@@ -37,9 +35,9 @@
     height: 280px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #E2E2E2;
-    border-radius: 3px;
+    border-radius: 4px;
     opacity: 1;
-    margin: 1%;
+    margin: 1.7%;
 }
 
 .imgCls{
@@ -83,17 +81,26 @@
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
+    padding-top: 2%;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    padding-top: 3%;
 }
 
 .btn1{
-    margin-top: 10px;
-    margin-right: 15px;
+    width: 44%;
+    height: 35px;
 }
 
 .btn{
-    margin-top: 10px;
+    width: 45%;
+    height: 35px;
     background: #A03037;
     color: white;
+    font-size: xx-small;
 }
 
 @media screen and (max-width: 470px) {
