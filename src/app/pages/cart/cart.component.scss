@@ -1,6 +1,6 @@
 .place{
     width: 70%;
-    height: 30%;
+    height: fit-content;
     border: 1px solid gray;
     margin-left: 13%;
     margin-top: 2%;
@@ -86,8 +86,6 @@
 }
 
 .undisplayed{
-    top: 378px;
-    left: 177px;
     width: 70%;
     height: 60px;
     background: #FFFFFF 0% 0% no-repeat padding-box;

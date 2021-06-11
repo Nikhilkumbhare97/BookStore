@@ -48,12 +48,13 @@
     cursor: pointer;
 }
 
-.searchbar{
-    width: 50%
-}
+// .searchbar{
+//     border: 1px solid ;
+//     width: 100%
+// }
 
 .search{
-    width: 500px;
+    width: 100% !important;
     height: 33px;
     background: #FCFCFC 0% 0% no-repeat padding-box;
     border-radius: 5px;

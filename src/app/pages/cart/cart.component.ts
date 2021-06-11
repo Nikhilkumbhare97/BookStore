@@ -8,7 +8,7 @@ import { UserService } from 'src/app/service/userService/user.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-
+  
   show = 1;
 
   constructor(private user : UserService,private snackBar: MatSnackBar) { }
@@ -21,6 +21,7 @@ export class CartComponent implements OnInit {
   }
 
   display(num){
+    
     this.show += num;
   }
 

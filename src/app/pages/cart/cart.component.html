@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="placebutton">
+    <div class="placebutton" >
         <button color="primary" (click)="display(1)">PLACE ORDER</button>
     </div>
 </div>
@@ -63,18 +63,30 @@
                 <input type="text" placeholder="Enter City" />
             </section>
             <section class="form-block">
-                <label> State </label>
-                <input type="text" placeholder="Enter State" />
+                <label> Landmark </label>
+                <input type="text" placeholder="Enter Landmark" />
             </section>
         </div>
-        <section class="form-block">
-            <label>Select an option</label>
-            <div class="radio">
-                <input type="radio" name="gridRadio
+        <form>
+            <section class="form-block">
+                <label>Type</label>
+                <div class="radio">
+                    <input type="radio" name="gridRadio
                 s" id="checkrads_9">
-                <label for="checkrads_9">Home</label>
-            </div>
-        </section>
+                    <label for="checkrads_9">Home</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="gridRadio
+                s" id="checkrads_9">
+                    <label for="checkrads_9">Work</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" name="gridRadio
+                s" id="checkrads_9">
+                    <label for="checkrads_9">Other</label>
+                </div>
+            </section>
+        </form>
     </div>
     <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
         <button color="primary"> CONTINUE </button>
