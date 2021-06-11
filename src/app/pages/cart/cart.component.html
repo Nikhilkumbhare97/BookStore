@@ -21,3 +21,62 @@
         <button color="primary" (click)="display(1)">PLACE ORDER</button>
     </div>
 </div>
+<div *ngIf='show == 1' class="undisplayed" fxLayoutAlign="start center">
+    <span class="detaillabel" fxFlexOffset="5">
+        Customer Details
+    </span>
+</div>
+<div class="place" *ngIf='show == 2'>
+    <div class="cardbox" fxLayoutAlign="start center">
+        Customer Details
+    </div>
+    <div class="customerpart">
+        <div class="text" fxLayout="row wrap">
+            <section class="form-block">
+                <label> Name </label>
+                <input type="text" placeholder="Enter Name" />
+            </section>
+            <section class="form-block">
+                <label>Phone number</label>
+                <input type="number" placeholder="Enter PhoneNumber" />
+            </section>
+        </div>
+        <div class="text" fxLayout="row wrap">
+            <section class="form-block">
+                <label> Pincode </label>
+                <input type="number" placeholder="Enter Pincode" />
+            </section>
+            <section class="form-block">
+                <label>Locality</label>
+                <input type="text" placeholder="Enter Locality" />
+            </section>
+        </div>
+        <div class="text" fxLayout="row wrap">
+            <section class="form-block">
+                <label> Address </label>
+                <input type="text" placeholder="Enter Address" />
+            </section>
+        </div>
+        <div class="text" fxLayout="row wrap">
+            <section class="form-block">
+                <label> City </label>
+                <input type="text" placeholder="Enter City" />
+            </section>
+            <section class="form-block">
+                <label> State </label>
+                <input type="text" placeholder="Enter State" />
+            </section>
+        </div>
+        <section class="form-block">
+            <label>Select an option</label>
+            <div class="radio">
+                <input type="radio" name="gridRadio
+                s" id="checkrads_9">
+                <label for="checkrads_9">Home</label>
+            </div>
+        </section>
+    </div>
+    <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
+        <button color="primary"> CONTINUE </button>
+    </div>
+</div>
