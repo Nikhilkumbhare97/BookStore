@@ -1,16 +1,16 @@
 <form class="clr-form clr-form-vertical" id="login-form" [formGroup]="form" (ngSubmit)="submit()">
-    <div class="password" fxLayout="row" fxLayoutAlign="start center">
+    <div class="form-group" fxLayout="row" fxLayoutAlign="start center">
         <clr-input-container class="input-container">
             <label>Email Id</label>
-            <input clrInput formControlName="email" placeholder="Enter Email" name="email" required />
+            <input  clrInput formControlName="email" placeholder="Enter Email" name="email">
             <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
         </clr-input-container>
     </div>
 
-    <div class="password" fxLayout="row" fxLayoutAlign="start center">
+    <div class="form-group" fxLayout="row" fxLayoutAlign="start center">
         <clr-password-container class="input-container">
             <label>Pasword</label>
-            <input clrPassword placeholder="Enter Password" formControlName="password" name="password" />
+            <input clrPassword placeholder="Enter Password" formControlName="password" name="password">
             <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
             <clr-control-error *clrIfError="'minlength'">It must be at least 8 characters!
             </clr-control-error>

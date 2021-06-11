@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="place">
+    <div class="cardbox">
+        My card({{length}})
+    </div>
+    <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
+        <div class="book">
+            <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+        </div>
+        <div class="detail">
+            <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
+            <span class="line2"> {{cart.product_id.author}} </span><br>
+            <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
+            <div class="icon">
+                <span> Remove</span>
+                <clr-icon class="icons" shape="trash" (click)="deleteBook(cart)"></clr-icon>
+            </div>
+        </div>
+    </div>
+    <div class="placebutton">
+        <button color="primary" (click)="display(1)">PLACE ORDER</button>
+    </div>
+</div>

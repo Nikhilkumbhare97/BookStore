@@ -40,4 +40,11 @@ export class UserService {
     return this.http.post('add_wish_list/'+id,data,this.options)
   }
 
+  getCartItem(){
+    return this.http.get('get_cart_items',this.options)
+  }
+
+  deleteCartItem(id : any){
+    return this.http.delete('remove_cart_item/'+id,this.options)
+  }
 }

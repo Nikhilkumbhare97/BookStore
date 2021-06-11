@@ -17,6 +17,7 @@ import { DashBoardComponent } from './pages/dash-board/dash-board.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './components/footer/footer.component';
 import { DisplayComponent } from './components/display/display.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DisplayComponent } from './components/display/display.component';
     HeaderComponent,
     DashBoardComponent,
     FooterComponent,
-    DisplayComponent
+    DisplayComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
