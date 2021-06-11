@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +10,10 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) { }
 
+  @Input() childMessage;
+  
   ngOnInit(): void {
+    console.log(this.childMessage)
   }
 
   redirect(){

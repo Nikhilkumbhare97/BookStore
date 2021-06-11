@@ -25,6 +25,9 @@
                     <button (click)="addToCart(book)" class="btn">Add to Cart</button>
                     <button (click)="addToWishList(book)" class="btn1">Wishlist</button>
                 </div>
+                <div class="button1" *ngIf="!byDefault && bookArray._id == addCart.product_id">
+                    <button class="btn2">Added to Cart</button>
+                </div>
             </div>
         </div>
     </div>

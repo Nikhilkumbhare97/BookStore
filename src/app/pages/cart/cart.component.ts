@@ -8,10 +8,10 @@ import { UserService } from 'src/app/service/userService/user.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  
+
   show = 1;
 
-  constructor(private user : UserService,private snackBar: MatSnackBar) { }
+  constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
   openSnackBar(message: string, duration: number) {
     let config = new MatSnackBarConfig();
@@ -20,8 +20,7 @@ export class CartComponent implements OnInit {
     }
     this.snackBar.open(message, undefined, config);
   }
-
-
+  parentMessage = 0;
   cartArray = [] as any;
   length = 0;
 
@@ -29,12 +28,12 @@ export class CartComponent implements OnInit {
     this.displayItems()
   }
 
-  display(num){
-    
+  display(num) {
+
     this.show += num;
   }
 
-  displayItems(){
+  displayItems() {
     let arr = [] as any
     this.user.getCartItem().subscribe((res) => {
       console.log(res)
@@ -42,24 +41,24 @@ export class CartComponent implements OnInit {
       this.length = arr.result.length;
       this.cartArray = arr.result
       console.log(this.length);
+      this.parentMessage = this.length;
       console.log(this.cartArray);
-    },(error) =>{
+    }, (error) => {
       console.log(error)
     })
   }
 
-  deleteBook(data : any){
+  deleteBook(data: any) {
     console.log(data);
-    let id  = data._id;
+    let id = data._id;
     console.log(id);
-    
-    this.user.deleteCartItem(id).subscribe((res : any) => {
+
+    this.user.deleteCartItem(id).subscribe((res: any) => {
       console.log(res)
       this.openSnackBar(res.message, 2000);
       this.displayItems()
-    },(error) => {
+    }, (error) => {
       console.log(error)
     })
   }
-
 }

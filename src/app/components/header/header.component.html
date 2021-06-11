@@ -12,11 +12,13 @@
                 <img src="../../../assets/icons/user.svg" alt="profile" class="profileimg">
                 <figcaption class="profiletext">Profile</figcaption>
             </figure>
-            <figure routerLink="/cart">
-                <img src="../../../assets/icons/supermarket.svg" alt="cart" class="cartimg">
-                <figcaption class="carttext" >Cart</figcaption>
+            <figure routerLink="/cart" class="cart1">
+                <div>
+                    <img src="../../../assets/icons/supermarket.svg" alt="cart" class="cartimg">
+                    <figcaption class="carttext">Cart</figcaption>
+                </div>
+                <span class="cart2">{{childMessage}}</span>
             </figure>
         </div>
-
     </div>
 </header>

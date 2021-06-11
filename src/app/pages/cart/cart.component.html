@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header [childMessage]="parentMessage"></app-header>
 <div class="place">
     <div class="cardbox">
         My card({{length}})
@@ -11,7 +11,7 @@
             <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
             <span class="line2"> {{cart.product_id.author}} </span><br>
             <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
-            <div class="icon">
+            <div class="iconss">
                 <span> Remove</span>
                 <clr-icon class="icons" shape="trash" (click)="deleteBook(cart)"></clr-icon>
             </div>

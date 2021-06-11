@@ -89,6 +89,24 @@
     cursor: pointer;
 }
 
+.cart1{
+    display: flex;
+}
+
+.cart2{
+    justify-content: center;
+    align-items: center;
+    font-size: small;
+    font-style: italic;
+    margin-top: -30%;
+    margin-left: -20%;
+    background-color: white;
+    color: rgb(104, 4, 4);
+    width: 100%;
+    height: 60%;
+    border-radius: 100%;
+}
+
 .carttext{
     text-align: left;
     font: normal normal normal 10px/13px Roboto;

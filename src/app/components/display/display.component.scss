@@ -90,6 +90,12 @@
     padding-top: 3%;
 }
 
+.button1{
+    display: flex;
+    align-items: center;
+    padding-top: 10%;
+}
+
 .btn1{
     width: 44%;
     height: 35px;
@@ -101,6 +107,14 @@
     background: #A03037;
     color: white;
     font-size: xx-small;
+}
+
+.btn2 {
+    width: 90%;
+    height: 35px;
+    background: #095adb;
+    color: white;
+    font-size: medium;
 }
 
 @media screen and (max-width: 470px) {
