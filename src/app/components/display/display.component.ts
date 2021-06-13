@@ -21,6 +21,8 @@ export class DisplayComponent implements OnInit {
 
   bookArray = [] as any
   addCart = [] as any
+  added = true;
+  wishlist = true;
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
@@ -41,7 +43,6 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
-    this.byDefault = true;
   }
 
   getAllBooks() {
@@ -54,7 +55,6 @@ export class DisplayComponent implements OnInit {
   }
 
   addToCart(data) {
-    console.log(this.bookArray);
     console.log(data);
     let bookId = data._id;
     let arr = [] as any;
@@ -66,9 +66,10 @@ export class DisplayComponent implements OnInit {
       console.log(res)
       arr = res;
       this.addCart = res;
-      console.log(this.addCart)
       this.openSnackBar(arr.message, 2000);
       this.byDefault = false;
+      this.added = false;
+      this.getAllBooks();
     }, (error) => {
       console.log(error)
       this.openSnackBar(arr.message, 2000);
@@ -86,6 +87,7 @@ export class DisplayComponent implements OnInit {
       console.log(res);
       arr = res
       this.openSnackBar(arr.message, 2000);
+      this.wishlist = false;
     }, (error) => {
       console.log(error);
       this.openSnackBar(arr.message, 2000);
