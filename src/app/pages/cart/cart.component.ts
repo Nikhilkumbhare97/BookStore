@@ -10,6 +10,8 @@ import { UserService } from 'src/app/service/userService/user.service';
 export class CartComponent implements OnInit {
 
   show = 1;
+  show1 = 0;
+  show2 = 1;
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
