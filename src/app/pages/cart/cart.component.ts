@@ -24,15 +24,16 @@ export class CartComponent implements OnInit {
   parentMessage = 0;
   cartArray = [] as any;
   length = 0;
+  quantity: number = 1;
 
-  name = new FormControl('',[Validators.required])
-  phoneNo = new FormControl('',[Validators.required])
-  pincode = new FormControl('',[Validators.required])
-  locality = new FormControl('',[Validators.required])
-  address = new FormControl('',[Validators.required])
-  city = new FormControl('',[Validators.required])
-  landmark = new FormControl('',[Validators.required])
-  type = new FormControl('',[Validators.required])
+  name = new FormControl('', [Validators.required])
+  phoneNo = new FormControl('', [Validators.required])
+  pincode = new FormControl('', [Validators.required])
+  locality = new FormControl('', [Validators.required])
+  address = new FormControl('', [Validators.required])
+  city = new FormControl('', [Validators.required])
+  landmark = new FormControl('', [Validators.required])
+  type = new FormControl('', [Validators.required])
 
   ngOnInit(): void {
     this.displayItems()
@@ -69,5 +70,20 @@ export class CartComponent implements OnInit {
     }, (error) => {
       console.log(error)
     })
+  }
+
+  i = 1
+  increment(data) {
+    if (this.i != data) {
+      this.i++;
+      this.quantity = this.i;
+    }
+  }
+
+  decrement() {
+    if (this.i != 1) {
+      this.i--;
+      this.quantity = this.i;
+    }
   }
 }

@@ -12,9 +12,9 @@
             <span class="line2"> {{cart.product_id.author}} </span><br>
             <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
             <div class="quant">
-                <button class="incre" onclick="">-</button>
-                <input class="quants" id=demoInput type="text" min=1 max=10>
-                <button class="incre" onclick="">+</button>
+                <button class="incre" (click)="decrement()">-</button>
+                <input class="quants" [value]="quantity">
+                <button class="incre" (click)="increment(cart.product_id.quantity)">+</button>
                 <div class="iconss">
                     <span (click)="deleteBook(cart)">Remove</span>
                 </div>
@@ -112,6 +112,7 @@
             <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
             <span class="line2"> {{cart.product_id.author}} </span><br>
             <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
+            <span class="line1"><b>Quantity: {{quantity}}</b> </span>
         </div>
     </div>
     <div class="placebutton">
