@@ -15,7 +15,7 @@
     margin-top: 1%;
     width :18%;
     margin-left: 3%;
-    
+    color: black;
 }
 
 .parttwo{
@@ -57,17 +57,19 @@
 
 .detail{
     margin: 10px;
+    width: 15%;
 }
 .iconss{
     display: flex;
     padding-left: 10%;
-    padding-top: 10%;
+    padding-top: 2%;
+    font-weight: 500;
 }
-.icons{
-    padding-left: 5%;
-    color: black;
-    width: 50px;
-}
+// .icons{
+//     padding-left: 5%;
+//     color: black;
+//     width: 50px;
+// }
 
 .placebutton{
     display: flex;
@@ -80,7 +82,7 @@
 
 .btn{
     background: #3771b4;
-    width: 12%;
+    width: 20%;
     color: white;
     font-size: small;
 }
@@ -108,12 +110,15 @@
     border-radius: 1px;
     opacity: 1;
     margin-left: 13%;
+    padding-left: 2%;
+    padding-top: 1%;
 }
 
 .customerpart{
     display: flex;
     flex-direction: column;
-    padding-left: 5%;
+    width: 80%;
+    padding-top: 3%;
 }
 
 .form-block{
@@ -144,4 +149,30 @@
 
 .radio{
     margin-right: 20%;
+}
+
+.detaillabel{
+    font-size: large;
+    font-weight: 500;
+    padding-top: 1.5%;
+}
+
+.quant{
+    display: flex;
+    width: 120%;
+    justify-content: space-between;
+    padding-top: 15%;
+    padding-left: 8%;
+    color: black;
+    height: 35%;
+}
+
+.quants{
+    width: 30%;
+    opacity: .5;
+}
+
+.incre{
+    border-radius: 100%;
+    opacity: .5;
 }

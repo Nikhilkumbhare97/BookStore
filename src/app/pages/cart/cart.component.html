@@ -1,6 +1,6 @@
 <app-header [childMessage]="parentMessage"></app-header>
 <div class="place">
-    <div class="cardbox">
+    <div class="cardbox detaillabel">
         My card({{length}})
     </div>
     <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
@@ -11,9 +11,13 @@
             <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
             <span class="line2"> {{cart.product_id.author}} </span><br>
             <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
-            <div class="iconss">
-                <span> Remove</span>
-                <clr-icon class="icons" shape="trash" (click)="deleteBook(cart)"></clr-icon>
+            <div class="quant">
+                <button class="incre" onclick="">-</button>
+                <input class="quants" id=demoInput type="text" min=1 max=10>
+                <button class="incre" onclick="">+</button>
+                <div class="iconss">
+                    <span (click)="deleteBook(cart)">Remove</span>
+                </div>
             </div>
         </div>
     </div>
@@ -27,7 +31,7 @@
     </span>
 </div>
 <div class="place" *ngIf='show == 2'>
-    <div class="cardbox" fxLayoutAlign="start center">
+    <div class="cardbox detaillabel" fxLayoutAlign="start center">
         Customer Details
     </div>
     <div class="customerpart">
@@ -54,7 +58,7 @@
         <div class="texts" fxLayout="row wrap">
             <section class="form-blocks">
                 <label> Address </label>
-                <input type="text" [formControl]="address" placeholder="Enter Address" size="95" />
+                <input type="text" [formControl]="address" placeholder="Enter Address" size="83" />
             </section>
         </div>
         <div class="text" fxLayout="row wrap">

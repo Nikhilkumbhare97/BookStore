@@ -39,7 +39,6 @@ export class CartComponent implements OnInit {
   }
 
   display(num) {
-
     this.show += num;
   }
 
