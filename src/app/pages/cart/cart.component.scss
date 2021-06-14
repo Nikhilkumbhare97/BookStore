@@ -86,12 +86,18 @@
 }
 
 .text{
-    margin-left: 3%;
     display: flex;
     flex-wrap: wrap;
     padding-top: 2%;
-    padding-left: 5%;
     justify-content: space-around;
+}
+
+.texts{
+    display: flex;
+    padding-top: 2%;
+    width: 117.5%;
+    padding-left: 5%;
+    justify-content: space-between;
 }
 
 .undisplayed{
@@ -107,13 +113,35 @@
 .customerpart{
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    padding-left: 5%;
 }
 
 .form-block{
-    width: 30%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
-    padding-right: 5%;
 }
 
+.form-blocks{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-blockss{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+    padding-left: 5%;
+}
+
+.radio-buttons{
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 2%;
+}
+
+.radio{
+    margin-right: 20%;
+}

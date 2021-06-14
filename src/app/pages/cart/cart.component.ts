@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
@@ -10,8 +11,6 @@ import { UserService } from 'src/app/service/userService/user.service';
 export class CartComponent implements OnInit {
 
   show = 1;
-  show1 = 0;
-  show2 = 1;
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
@@ -25,6 +24,15 @@ export class CartComponent implements OnInit {
   parentMessage = 0;
   cartArray = [] as any;
   length = 0;
+
+  name = new FormControl('',[Validators.required])
+  phoneNo = new FormControl('',[Validators.required])
+  pincode = new FormControl('',[Validators.required])
+  locality = new FormControl('',[Validators.required])
+  address = new FormControl('',[Validators.required])
+  city = new FormControl('',[Validators.required])
+  landmark = new FormControl('',[Validators.required])
+  type = new FormControl('',[Validators.required])
 
   ngOnInit(): void {
     this.displayItems()

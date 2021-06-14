@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="placebutton" >
+    <div class="placebutton">
         <button class="btn" (click)="display(1)">PLACE ORDER</button>
     </div>
 </div>
@@ -34,56 +34,55 @@
         <div class="text" fxLayout="row wrap">
             <section class="form-block">
                 <label> Name </label>
-                <input type="text" placeholder="Enter Name" />
+                <input type="text" [formControl]="name" placeholder="Enter Name" />
             </section>
             <section class="form-block">
                 <label>Phone number</label>
-                <input type="number" placeholder="Enter PhoneNumber" />
+                <input type="text" [formControl]="phoneNo" placeholder="Enter PhoneNumber" />
             </section>
         </div>
         <div class="text" fxLayout="row wrap">
             <section class="form-block">
                 <label> Pincode </label>
-                <input type="number" placeholder="Enter Pincode" />
+                <input type="text" [formControl]="pincode" placeholder="Enter Pincode" />
             </section>
             <section class="form-block">
                 <label>Locality</label>
-                <input type="text" placeholder="Enter Locality" />
+                <input type="text" [formControl]="locality" placeholder="Enter Locality" />
             </section>
         </div>
-        <div class="text" fxLayout="row wrap">
-            <section class="form-block">
+        <div class="texts" fxLayout="row wrap">
+            <section class="form-blocks">
                 <label> Address </label>
-                <input type="text" placeholder="Enter Address" />
+                <input type="text" [formControl]="address" placeholder="Enter Address" size="95" />
             </section>
         </div>
         <div class="text" fxLayout="row wrap">
             <section class="form-block">
                 <label> City </label>
-                <input type="text" placeholder="Enter City" />
+                <input type="text" [formControl]="city" placeholder="Enter City" />
             </section>
             <section class="form-block">
                 <label> Landmark </label>
-                <input type="text" placeholder="Enter Landmark" />
+                <input type="text" [formControl]="landmark" placeholder="Enter Landmark" />
             </section>
         </div>
         <form>
-            <section class="form-block">
+            <section class="form-blockss" [formControl]="type">
                 <label>Type</label>
-                <div class="radio">
-                    <input type="radio" name="gridRadio
-                s" id="checkrads_9">
-                    <label for="checkrads_9">Home</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="gridRadio
-                s" id="checkrads_9">
-                    <label for="checkrads_9">Work</label>
-                </div>
-                <div class="radio">
-                    <input type="radio" name="gridRadio
-                s" id="checkrads_9">
-                    <label for="checkrads_9">Other</label>
+                <div class="radio-buttons">
+                    <div class="radio">
+                        <input type="radio" name="gridRadios" id="checkrads_9">
+                        <label for="checkrads_9">Home</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="gridRadios" id="checkrads_9">
+                        <label for="checkrads_9">Work</label>
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="gridRadios" id="checkrads_9">
+                        <label for="checkrads_9">Other</label>
+                    </div>
                 </div>
             </section>
         </form>
@@ -92,7 +91,7 @@
         <button class="btn" (click)="display(2)"> CONTINUE </button>
     </div>
 </div>
-<div *ngIf='show == 3' class="undisplayed" fxLayoutAlign="start center">
+<div *ngIf='show == 2' class="undisplayed" fxLayoutAlign="start center">
     <span class="detaillabel" fxFlexOffset="5">
         Order Summary
     </span>
@@ -111,7 +110,7 @@
             <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
         </div>
     </div>
-    <div class="placebutton" >
+    <div class="placebutton">
         <button class="btn">CHECKOUT</button>
     </div>
 </div>
