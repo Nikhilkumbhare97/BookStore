@@ -1,0 +1,113 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 89%;
+}
+
+.order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3%;
+}
+
+.image{
+    width: 60%;
+}
+
+.text{
+    width: 50%;
+    text-align: center;
+    font: normal normal normal 18px/22px Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+    padding-bottom: 2%;
+    font-weight: 500;
+}
+
+.table{
+    margin-top: 30px;
+}
+
+.table{
+    width: 50%;
+    border-collapse: collapse;
+}
+
+td{
+    width: 25%;
+}
+
+.main-table,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.head{
+    text-align: center;
+    font: normal normal medium 16px/19px Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+    background:#DCDCDC;
+}
+
+.row{
+    text-align: center;
+    font: normal normal normal 14px/18px Lato;
+    letter-spacing: 0px;
+    color: #333232;
+    opacity: 1;
+}
+
+.btnsss{
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    width: 160%;
+    height: 35px;
+    background: #2f6baa 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    color: white;
+}
+
+@media screen and (max-width: 470px) {
+    
+    .main-table{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 620px) {
+    .main-table{
+        width: 80%;
+    }
+    .order{
+        width: 50%;
+        height: 70%;
+    }
+}
+@media screen and (max-width: 400px) {
+    .main-table{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 350px) {
+    .main-table{
+        width: 30%;
+    }
+}
+@media screen and (max-width: 200px) {
+    .main-table{
+        width: 10%;
+    }
+}
