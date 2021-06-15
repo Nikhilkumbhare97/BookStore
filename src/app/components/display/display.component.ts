@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
@@ -21,8 +21,9 @@ export class DisplayComponent implements OnInit {
 
   bookArray = [] as any
   addCart = [] as any
-  added = true;
-  wishlist = true;
+  wishlist = [] as any
+
+  @Output() messageEvent = new EventEmitter<any>();
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
@@ -34,6 +35,7 @@ export class DisplayComponent implements OnInit {
     this.snackBar.open(message, undefined, config);
   }
 
+  items: number = 0;
 
   sorts: Sort[] = [
     { value: 'lowtohigh', viewValue: 'Price: Low to High' },
@@ -43,6 +45,7 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
+    
   }
 
   getAllBooks() {
@@ -63,12 +66,12 @@ export class DisplayComponent implements OnInit {
     }
     console.log(bookId);
     this.user.addBook(bookId, reqObj).subscribe((res) => {
+      this.items += 1;
+      this.sendMessage();
       console.log(res)
       arr = res;
       this.addCart = res;
       this.openSnackBar(arr.message, 2000);
-      this.byDefault = false;
-      this.added = false;
       this.getAllBooks();
     }, (error) => {
       console.log(error)
@@ -86,11 +89,27 @@ export class DisplayComponent implements OnInit {
     this.user.addToWishlist(bookId, reqObj).subscribe((res) => {
       console.log(res);
       arr = res
+      this.wishlist = res;
       this.openSnackBar(arr.message, 2000);
       this.wishlist = false;
     }, (error) => {
       console.log(error);
       this.openSnackBar(arr.message, 2000);
     })
+  }
+
+  sendMessage() {
+    console.log(this.items)
+    this.messageEvent.emit(this.items)
+  }
+
+  buttonChange(){
+    if(this.bookArray._id == this.addCart._id){
+      return true;
+    }else if(this.bookArray._id == this.wishlist._id){
+        return true;
+    }else{
+      return false;
+    }
   }
 }

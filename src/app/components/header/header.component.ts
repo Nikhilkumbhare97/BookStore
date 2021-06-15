@@ -11,9 +11,11 @@ export class HeaderComponent implements OnInit {
   constructor(private router: Router) { }
 
   @Input() childMessage;
+  @Input() childMessages;
   
   ngOnInit(): void {
     console.log(this.childMessage)
+    console.log(this.childMessages)
   }
 
   redirect(){

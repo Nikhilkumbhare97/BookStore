@@ -47,4 +47,12 @@ export class UserService {
   deleteCartItem(id : any){
     return this.http.delete('remove_cart_item/'+id,this.options)
   }
+
+  getWishlistItem(){
+    return this.http.get('get_wishlist_items',this.options)
+  }
+
+  deleteWishlistItem(id: any){
+    return this.http.delete('remove_wishlist_item/'+id,this.options)
+  }
 }

@@ -9,8 +9,12 @@
         </div>
         <div class="lastpart">
             <figure class="profilediv">
-                <img src="../../../assets/icons/user.svg" alt="profile" class="profileimg">
+                <img src="../../../assets/icons/user.svg" alt="profile" [matMenuTriggerFor]="menu" class="profileimg">
                 <figcaption class="profiletext">Profile</figcaption>
+                <mat-menu #menu="matMenu">
+                    <div mat-menu-item routerLink="/wishlist">Get Wishlist</div>
+                    <div mat-menu-item>Logout</div>
+                  </mat-menu>
             </figure>
             <figure routerLink="/cart" class="cart1">
                 <div>
@@ -18,6 +22,7 @@
                     <figcaption class="carttext">Cart</figcaption>
                 </div>
                 <span class="cart2">{{childMessage}}</span>
+                <span class="cart2">{{childMessages}}</span>
             </figure>
         </div>
     </div>

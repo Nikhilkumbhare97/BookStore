@@ -75,7 +75,7 @@ export class CartComponent implements OnInit {
 
   i = 1
   increment(data) {
-    if (this.i != data) {
+    if (this.i != data.product_id.quantity) {
       this.i++;
       this.quantity = this.i;
     }

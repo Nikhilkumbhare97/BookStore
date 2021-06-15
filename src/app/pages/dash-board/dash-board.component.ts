@@ -12,4 +12,11 @@ export class DashBoardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  items: number;
+  parentMessage: number;
+
+  receiveMessage($event) {
+    this.items = $event;
+    this.parentMessage = this.items;
+  }
 }
