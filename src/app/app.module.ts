@@ -25,6 +25,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { GetWishlistComponent } from './pages/get-wishlist/get-wishlist.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { SearchPipe } from './pipe/search.pipe';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { MatMenuModule } from '@angular/material/menu';
     DisplayComponent,
     CartComponent,
     CheckoutComponent,
-    GetWishlistComponent
+    GetWishlistComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

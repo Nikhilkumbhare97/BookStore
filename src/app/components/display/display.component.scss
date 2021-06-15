@@ -46,6 +46,7 @@
 }
 
 .imgCls{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,3 +152,38 @@
         width: 80px;
     }
 }
+
+.imgCls div{
+    position: absolute;
+    background:white;
+    color:black;
+    margin-top: 50%;
+    font-family: sans-serif;
+    opacity: 1;
+    visibility: hidden;
+    -webkit-transition: visibility 0s, opacity 0.5s linear; 
+    transition: visibility 0s, opacity 0.5s linear;
+   }
+   
+   /* Hover on Parent Container */
+   .imgCls:hover{
+    cursor: pointer;
+   }
+   
+   .imgCls:hover div{
+    width: 110%;
+    height: max-content;
+    padding: 8%;
+    visibility: visible;
+    opacity: 1; 
+    border: 1px solid gray;
+    border-radius: 5px;
+   }
+
+   .headsss{
+       font-size: large;
+   }
+
+   .parass{
+       font-size: small;
+   }
