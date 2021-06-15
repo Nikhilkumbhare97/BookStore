@@ -35,63 +35,79 @@
         <div class="cardbox detaillabel" fxLayoutAlign="start center">
             Customer Details
         </div>
-        <div class="customerpart">
+        <form class="customerpart">
             <div class="text" fxLayout="row wrap">
                 <section class="form-block">
-                    <label> Name </label>
-                    <input type="text" [formControl]="name" placeholder="Enter Name" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Name</mat-label>
+                        <input matInput [formControl]="name" placeholder="Enter Name">
+                        <mat-error *ngIf="name">
+                            Name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
                 <section class="form-block">
-                    <label>Phone number</label>
-                    <input type="text" [formControl]="phoneNo" placeholder="Enter PhoneNumber" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput [formControl]="phoneNo" placeholder="Enter Phone Number" >
+                        <mat-error *ngIf="phoneNo">
+                            Phone Number is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
             </div>
             <div class="text" fxLayout="row wrap">
                 <section class="form-block">
-                    <label> Pincode </label>
-                    <input type="text" [formControl]="pincode" placeholder="Enter Pincode" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Pincode</mat-label>
+                        <input matInput [formControl]="pincode" placeholder="Enter Pincode">
+                        <mat-error *ngIf="pincode">
+                            Pincode is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
                 <section class="form-block">
-                    <label>Locality</label>
-                    <input type="text" [formControl]="locality" placeholder="Enter Locality" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Locality</mat-label>
+                        <input matInput [formControl]="locality" placeholder="Enter Locality">
+                        <mat-error *ngIf="locality">
+                            Locality is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
             </div>
             <div class="texts" fxLayout="row wrap">
                 <section class="form-blocks">
-                    <label> Address </label>
-                    <input type="text" [formControl]="address" placeholder="Enter Address" size="83" />
+                    <mat-form-field class="example-full-widths">
+                        <mat-label>Address</mat-label>
+                        <input matInput [formControl]="address" placeholder="Enter Address">
+                        <mat-error *ngIf="address">
+                            Address is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
             </div>
             <div class="text" fxLayout="row wrap">
                 <section class="form-block">
-                    <label> City </label>
-                    <input type="text" [formControl]="city" placeholder="Enter City" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>City</mat-label>
+                        <input matInput [formControl]="city" placeholder="Enter City">
+                        <mat-error *ngIf="city">
+                            City is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
                 <section class="form-block">
-                    <label> Landmark </label>
-                    <input type="text" [formControl]="landmark" placeholder="Enter Landmark" />
+                    <mat-form-field class="example-full-width">
+                        <mat-label>Landmark</mat-label>
+                        <input matInput [formControl]="landmark" placeholder="Enter Landmark">
+                        <mat-error *ngIf="landmark">
+                            Landmark is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
                 </section>
             </div>
-            <form>
-                <section class="form-blockss" [formControl]="type">
-                    <label>Type</label>
-                    <div class="radio-buttons">
-                        <div class="radio">
-                            <input type="radio" name="gridRadios" id="checkrads_9">
-                            <label for="checkrads_9">Home</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="gridRadios" id="checkrads_9">
-                            <label for="checkrads_9">Work</label>
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="gridRadios" id="checkrads_9">
-                            <label for="checkrads_9">Other</label>
-                        </div>
-                    </div>
-                </section>
-            </form>
-        </div>
+        </form>
         <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
             <button class="btn" (click)="display(0,1)"> CONTINUE </button>
         </div>
@@ -113,7 +129,7 @@
                 <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
                 <span class="line2"> {{cart.product_id.author}} </span><br>
                 <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
-                <span class="line1"><b>Quantity: {{quantity}}</b> </span>
+                <span class="line11"><b>Quantity: {{quantity}}</b> </span>
             </div>
         </div>
         <div class="placebutton">

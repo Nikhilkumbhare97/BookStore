@@ -1,6 +1,9 @@
 <div class="container" fxLayout="column">
     <div class="head-container">
-        <h1>Books</h1>
+        <div>
+            <span class="head1">Books </span>
+            <span class="head2">({{bookArray.length}} items)</span>
+        </div>
         <section class="sort">
             <label>Sort by</label>
             <select [(ngModel)]="selectedValue">

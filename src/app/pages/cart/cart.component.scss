@@ -5,7 +5,7 @@
 }
 
 .place{
-    width: 58%;
+    width: 57%;
     height: fit-content;
     border: 1px solid gray;
     margin-left: 11%;
@@ -94,22 +94,20 @@
 }
 
 .text{
+    margin-left: 4%;
     display: flex;
     flex-wrap: wrap;
     padding-top: 2%;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .texts{
-    display: flex;
+    margin-left: 4%;
     padding-top: 2%;
-    width: 117.5%;
-    padding-left: 5%;
-    justify-content: space-between;
 }
 
 .undisplayed{
-    width: 58%;
+    width: 57%;
     height: 60px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid #DCDCDC;
@@ -130,13 +128,16 @@
 .form-block{
     width: 40%;
     display: flex;
-    justify-content: space-between;
+    color: black;
 }
 
 .form-blocks{
-    width: 80%;
     display: flex;
-    justify-content: space-between;
+    color: black;
+}
+
+.texts{
+    width: 69%;
 }
 
 .form-blockss{
@@ -183,4 +184,19 @@
 .incre{
     border-radius: 100%;
     opacity: .5;
+}
+
+.line11{
+    margin-left: 15px;
+    margin-top: 2%;
+}
+
+.example-full-width, .remain{
+    width: 80%;
+    color: black;
+}
+
+.example-full-widths{
+    width: 160%;
+    color: black;
 }
