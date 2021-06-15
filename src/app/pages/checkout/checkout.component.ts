@@ -12,9 +12,5 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  route() {
-    this.router.navigate(['/userdashboard'])
-  }
-
+  
 }

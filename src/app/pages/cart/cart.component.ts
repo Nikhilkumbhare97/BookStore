@@ -11,6 +11,7 @@ import { UserService } from 'src/app/service/userService/user.service';
 export class CartComponent implements OnInit {
 
   show = 1;
+  show1 = 0;
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
@@ -39,8 +40,9 @@ export class CartComponent implements OnInit {
     this.displayItems()
   }
 
-  display(num) {
+  display(num, num1) {
     this.show += num;
+    this.show1 += num1;
   }
 
   displayItems() {

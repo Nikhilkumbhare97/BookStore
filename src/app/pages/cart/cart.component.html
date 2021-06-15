@@ -1,121 +1,124 @@
 <app-header [childMessage]="parentMessage"></app-header>
-<div class="place">
-    <div class="cardbox detaillabel">
-        My card({{length}})
-    </div>
-    <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
-        <div class="book">
-            <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+<div class="main-place">
+    <div class="place">
+        <div class="cardbox detaillabel">
+            My card({{length}})
         </div>
-        <div class="detail">
-            <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
-            <span class="line2"> {{cart.product_id.author}} </span><br>
-            <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
-            <div class="quant">
-                <button class="incre" (click)="decrement()">-</button>
-                <input class="quants" [value]="quantity">
-                <button class="incre" (click)="increment(cart.product_id.quantity)">+</button>
-                <div class="iconss">
-                    <span (click)="deleteBook(cart)">Remove</span>
+        <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
+            <div class="book">
+                <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+            </div>
+            <div class="detail">
+                <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
+                <span class="line2"> {{cart.product_id.author}} </span><br>
+                <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
+                <div class="quant">
+                    <button class="incre" (click)="decrement()">-</button>
+                    <input class="quants" [value]="quantity">
+                    <button class="incre" (click)="increment(cart.product_id.quantity)">+</button>
+                    <div class="iconss">
+                        <span (click)="deleteBook(cart)">Remove</span>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="placebutton">
+            <button class="btn" (click)="display(1,1)">PLACE ORDER</button>
+        </div>
     </div>
-    <div class="placebutton">
-        <button class="btn" (click)="display(1)">PLACE ORDER</button>
+    <div *ngIf='show == 1' class="undisplayed" fxLayoutAlign="start center">
+        <span class="detaillabel" fxFlexOffset="5">
+            Customer Details
+        </span>
     </div>
-</div>
-<div *ngIf='show == 1' class="undisplayed" fxLayoutAlign="start center">
-    <span class="detaillabel" fxFlexOffset="5">
-        Customer Details
-    </span>
-</div>
-<div class="place" *ngIf='show == 2'>
-    <div class="cardbox detaillabel" fxLayoutAlign="start center">
-        Customer Details
-    </div>
-    <div class="customerpart">
-        <div class="text" fxLayout="row wrap">
-            <section class="form-block">
-                <label> Name </label>
-                <input type="text" [formControl]="name" placeholder="Enter Name" />
-            </section>
-            <section class="form-block">
-                <label>Phone number</label>
-                <input type="text" [formControl]="phoneNo" placeholder="Enter PhoneNumber" />
-            </section>
+    <div class="place" *ngIf='show == 2'>
+        <div class="cardbox detaillabel" fxLayoutAlign="start center">
+            Customer Details
         </div>
-        <div class="text" fxLayout="row wrap">
-            <section class="form-block">
-                <label> Pincode </label>
-                <input type="text" [formControl]="pincode" placeholder="Enter Pincode" />
-            </section>
-            <section class="form-block">
-                <label>Locality</label>
-                <input type="text" [formControl]="locality" placeholder="Enter Locality" />
-            </section>
-        </div>
-        <div class="texts" fxLayout="row wrap">
-            <section class="form-blocks">
-                <label> Address </label>
-                <input type="text" [formControl]="address" placeholder="Enter Address" size="83" />
-            </section>
-        </div>
-        <div class="text" fxLayout="row wrap">
-            <section class="form-block">
-                <label> City </label>
-                <input type="text" [formControl]="city" placeholder="Enter City" />
-            </section>
-            <section class="form-block">
-                <label> Landmark </label>
-                <input type="text" [formControl]="landmark" placeholder="Enter Landmark" />
-            </section>
-        </div>
-        <form>
-            <section class="form-blockss" [formControl]="type">
-                <label>Type</label>
-                <div class="radio-buttons">
-                    <div class="radio">
-                        <input type="radio" name="gridRadios" id="checkrads_9">
-                        <label for="checkrads_9">Home</label>
+        <div class="customerpart">
+            <div class="text" fxLayout="row wrap">
+                <section class="form-block">
+                    <label> Name </label>
+                    <input type="text" [formControl]="name" placeholder="Enter Name" />
+                </section>
+                <section class="form-block">
+                    <label>Phone number</label>
+                    <input type="text" [formControl]="phoneNo" placeholder="Enter PhoneNumber" />
+                </section>
+            </div>
+            <div class="text" fxLayout="row wrap">
+                <section class="form-block">
+                    <label> Pincode </label>
+                    <input type="text" [formControl]="pincode" placeholder="Enter Pincode" />
+                </section>
+                <section class="form-block">
+                    <label>Locality</label>
+                    <input type="text" [formControl]="locality" placeholder="Enter Locality" />
+                </section>
+            </div>
+            <div class="texts" fxLayout="row wrap">
+                <section class="form-blocks">
+                    <label> Address </label>
+                    <input type="text" [formControl]="address" placeholder="Enter Address" size="83" />
+                </section>
+            </div>
+            <div class="text" fxLayout="row wrap">
+                <section class="form-block">
+                    <label> City </label>
+                    <input type="text" [formControl]="city" placeholder="Enter City" />
+                </section>
+                <section class="form-block">
+                    <label> Landmark </label>
+                    <input type="text" [formControl]="landmark" placeholder="Enter Landmark" />
+                </section>
+            </div>
+            <form>
+                <section class="form-blockss" [formControl]="type">
+                    <label>Type</label>
+                    <div class="radio-buttons">
+                        <div class="radio">
+                            <input type="radio" name="gridRadios" id="checkrads_9">
+                            <label for="checkrads_9">Home</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="gridRadios" id="checkrads_9">
+                            <label for="checkrads_9">Work</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="gridRadios" id="checkrads_9">
+                            <label for="checkrads_9">Other</label>
+                        </div>
                     </div>
-                    <div class="radio">
-                        <input type="radio" name="gridRadios" id="checkrads_9">
-                        <label for="checkrads_9">Work</label>
-                    </div>
-                    <div class="radio">
-                        <input type="radio" name="gridRadios" id="checkrads_9">
-                        <label for="checkrads_9">Other</label>
-                    </div>
-                </div>
-            </section>
-        </form>
-    </div>
-    <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
-        <button class="btn" (click)="display(2)"> CONTINUE </button>
-    </div>
-</div>
-<div *ngIf='show == 2' class="undisplayed" fxLayoutAlign="start center">
-    <span class="detaillabel" fxFlexOffset="5">
-        Order Summary
-    </span>
-</div>
-<div class="place" *ngIf='show == 4'>
-    <div class="cardbox">
-        Order Summary
-    </div>
-    <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
-        <div class="book">
-            <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+                </section>
+            </form>
         </div>
-        <div class="detail">
-            <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
-            <span class="line2"> {{cart.product_id.author}} </span><br>
-            <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
-            <span class="line1"><b>Quantity: {{quantity}}</b> </span>
+        <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
+            <button class="btn" (click)="display(0,1)"> CONTINUE </button>
         </div>
     </div>
-    <div class="placebutton">
-        <button class="btn" routerLink="/checkout">CHECKOUT</button>
+    <div *ngIf='show1 == 1' class="undisplayed" fxLayoutAlign="start center">
+        <span class="detaillabel" fxFlexOffset="5">
+            Order Summary
+        </span>
+    </div>
+    <div class="place" *ngIf='show1 == 2'>
+        <div class="cardbox detaillabel">
+            Order Summary
+        </div>
+        <div fxLayout="row wrap" *ngFor="let cart of cartArray" class="parttwo">
+            <div class="book">
+                <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+            </div>
+            <div class="detail">
+                <span class="line1"> <b>{{cart.product_id.bookName}}</b></span><br>
+                <span class="line2"> {{cart.product_id.author}} </span><br>
+                <span class="line1"><b>Rs. {{cart.product_id.price}}</b> </span>
+                <span class="line1"><b>Quantity: {{quantity}}</b> </span>
+            </div>
+        </div>
+        <div class="placebutton">
+            <button class="btn" routerLink="/checkout">CHECKOUT</button>
+        </div>
     </div>
 </div>
+<app-footer></app-footer>
