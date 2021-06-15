@@ -1,1 +1,24 @@
-<p>get-wishlist works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="place">
+        <div class="cardbox detaillabel">
+            My Wishlist ({{wishlistArray.length}})
+        </div>
+        <div fxLayout="row wrap" *ngFor="let wish of wishlistArray" class="part1">
+            <div class="parttwo">
+                <div class="book">
+                    <img class="img1" src="../../../assets/BookImage/Image 11@2x.png">
+                </div>
+                <div class="detail">
+                    <span class="line1"> <b>{{wish.product_id.bookName}}</b></span><br>
+                    <span class="line2"> {{wish.product_id.author}} </span><br>
+                    <span class="line3"><b>Rs. {{wish.product_id.price}}</b> </span>
+                </div>
+            </div>
+            <mat-icon class="material-icons-outlined" (click)="deleteBook(wish)">
+                delete
+            </mat-icon>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
