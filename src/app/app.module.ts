@@ -21,6 +21,8 @@ import { CartComponent } from './pages/cart/cart.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
+import { GetWishlistComponent } from './pages/get-wishlist/get-wishlist.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     FooterComponent,
     DisplayComponent,
     CartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    GetWishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSnackBarModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

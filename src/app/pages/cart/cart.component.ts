@@ -34,7 +34,6 @@ export class CartComponent implements OnInit {
   address = new FormControl('', [Validators.required])
   city = new FormControl('', [Validators.required])
   landmark = new FormControl('', [Validators.required])
-  type = new FormControl('', [Validators.required])
 
   ngOnInit(): void {
     this.displayItems()
@@ -86,6 +85,12 @@ export class CartComponent implements OnInit {
     if (this.i != 1) {
       this.i--;
       this.quantity = this.i;
+    }
+  }
+
+  displays(num) {
+    if (this.name.valid && this.phoneNo.valid && this.address.valid && this.city.valid) {
+      this.show1 += num;
     }
   }
 }

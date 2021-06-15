@@ -147,15 +147,17 @@
     padding-left: 5%;
 }
 
-.radio-buttons{
-    padding-top: 2%;
-    display: flex;
-    justify-content: flex-start;
-    padding-bottom: 2%;
+.type{
+    margin-left: 4%;
+    margin-top: 2%;
 }
 
-.radio{
-    margin-right: 20%;
+.radios{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4%;
+    margin-top: 2%;
 }
 
 .detaillabel{
