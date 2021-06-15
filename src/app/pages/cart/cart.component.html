@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="placebutton">
-            <button class="btn" (click)="display(1,1)">PLACE ORDER</button>
+            <button class="btn" onclick="this.style.visibility = 'hidden'" (click)="display(1,1)">PLACE ORDER</button>
         </div>
     </div>
     <div *ngIf='show == 1' class="undisplayed" fxLayoutAlign="start center">
@@ -117,7 +117,7 @@
             </div>
         </form>
         <div class="placebutton" fxLayout="row wrap" fxLayoutAlign="end end">
-            <button class="btn" (click)="displays(1)"> CONTINUE </button>
+            <button class="btn" onclick="this.style.visibility = 'hidden'" (click)="displays(1)"> CONTINUE </button>
         </div>
     </div>
     <div *ngIf='show1 == 1' class="undisplayed" fxLayoutAlign="start center">

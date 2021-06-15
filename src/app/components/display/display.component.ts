@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
+
 
 
 interface Sort {
@@ -23,8 +24,6 @@ export class DisplayComponent implements OnInit {
   addCart = [] as any
   wishlist = [] as any
 
-  @Output() messageEvent = new EventEmitter<any>();
-
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
   openSnackBar(message: string, duration: number) {
@@ -34,8 +33,6 @@ export class DisplayComponent implements OnInit {
     }
     this.snackBar.open(message, undefined, config);
   }
-
-  items: number = 0;
 
   sorts: Sort[] = [
     { value: 'lowtohigh', viewValue: 'Price: Low to High' },
@@ -66,8 +63,6 @@ export class DisplayComponent implements OnInit {
     }
     console.log(bookId);
     this.user.addBook(bookId, reqObj).subscribe((res) => {
-      this.items += 1;
-      this.sendMessage();
       console.log(res)
       arr = res;
       this.addCart = res;
@@ -96,11 +91,6 @@ export class DisplayComponent implements OnInit {
       console.log(error);
       this.openSnackBar(arr.message, 2000);
     })
-  }
-
-  sendMessage() {
-    console.log(this.items)
-    this.messageEvent.emit(this.items)
   }
 
   buttonChange(){

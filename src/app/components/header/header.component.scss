@@ -48,8 +48,16 @@
     cursor: pointer;
 }
 
-.searchbar{
-    width: 100%
+.SearchButton{
+    width: 65%;
+}
+
+.searchs{
+    font-family: 'Helvetica', FontAwesome, sans-serif; 
+    width: 65%;
+    height: 33px;
+    border-radius: 5px;
+    padding-left: 2%;
 }
 
 .search{
