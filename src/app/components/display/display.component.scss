@@ -47,7 +47,6 @@
 }
 
 .imgCls{
-    // position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +99,7 @@
 .button1{
     display: flex;
     align-items: center;
-    padding-top: 10%;
+    padding-top: 6%;
 }
 
 .btn1{
@@ -119,7 +118,7 @@
 .btn2 {
     width: 90%;
     height: 35px;
-    background: #095adb;
+    background: #3371B5;
     color: white;
     font-size: medium;
 }
@@ -158,8 +157,8 @@
     position: absolute;
     background:white;
     color:black;
-    margin-top: 10%;
     margin-left: 37%;
+    margin-top: 8%;
     font-family: sans-serif;
     opacity: 1;
     visibility: hidden;
@@ -189,4 +188,11 @@
 
    .parass{
        font-size: small;
+   }
+
+   .pageini{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 2%;
    }

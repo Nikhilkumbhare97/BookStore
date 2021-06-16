@@ -26,6 +26,7 @@ import { GetWishlistComponent } from './pages/get-wishlist/get-wishlist.componen
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { SearchPipe } from './pipe/search.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { SearchPipe } from './pipe/search.pipe';
     MatFormFieldModule,
     MatRadioModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

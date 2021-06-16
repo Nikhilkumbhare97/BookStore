@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
@@ -26,6 +26,9 @@ export class DisplayComponent implements OnInit {
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
+  totalLength: any;
+  page: number = 1;
+
   openSnackBar(message: string, duration: number) {
     let config = new MatSnackBarConfig();
     if (duration != 0) {
@@ -43,13 +46,15 @@ export class DisplayComponent implements OnInit {
   ngOnInit(): void {
     this.getAllBooks();
     this.displayItems();
-    this.displayItem(); 
+    this.displayItem();
   }
 
   getAllBooks() {
     this.user.getBooks().subscribe((res) => {
       console.log(res);
       this.bookArray = res['result'];
+      this.totalLength = this.bookArray.length;
+      console.log(this.totalLength)
     }, (error) => {
       console.log(error);
     })
@@ -110,17 +115,15 @@ export class DisplayComponent implements OnInit {
     })
   }
 
-  buttonChange(id: any){
-      let result = this.cart.find((value) => {
-        console.log(value.product_id._id == id);
-        return value.product_id._id == id;
-      })
-      return result;
+  buttonChange(id: any) {
+    let result = this.cart.find((value) => {
+      return value.product_id._id == id;
+    })
+    return result;
   }
 
-  changeButton(id: any){
+  changeButton(id: any) {
     let result = this.wish.find((value) => {
-      console.log(value.product_id._id == id);
       return value.product_id._id == id;
     })
     return result;
