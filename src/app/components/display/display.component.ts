@@ -21,8 +21,8 @@ export class DisplayComponent implements OnInit {
   selectedValue: string;
 
   bookArray = [] as any
-  addCart = [] as any
-  wishlist = [] as any
+  cart = [] as any
+  wish = [] as any
 
   constructor(private user: UserService, private snackBar: MatSnackBar) { }
 
@@ -42,7 +42,8 @@ export class DisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAllBooks();
-    
+    this.displayItems();
+    this.displayItem(); 
   }
 
   getAllBooks() {
@@ -65,14 +66,12 @@ export class DisplayComponent implements OnInit {
     this.user.addBook(bookId, reqObj).subscribe((res) => {
       console.log(res)
       arr = res;
-      this.addCart = res;
       this.openSnackBar(arr.message, 2000);
       this.getAllBooks();
     }, (error) => {
       console.log(error)
       this.openSnackBar(arr.message, 2000);
     })
-
   }
 
   addToWishList(data) {
@@ -84,22 +83,46 @@ export class DisplayComponent implements OnInit {
     this.user.addToWishlist(bookId, reqObj).subscribe((res) => {
       console.log(res);
       arr = res
-      this.wishlist = res;
       this.openSnackBar(arr.message, 2000);
-      this.wishlist = false;
     }, (error) => {
       console.log(error);
       this.openSnackBar(arr.message, 2000);
     })
   }
 
-  buttonChange(){
-    if(this.bookArray._id == this.addCart._id){
-      return true;
-    }else if(this.bookArray._id == this.wishlist._id){
-        return true;
-    }else{
-      return false;
-    }
+  displayItems() {
+    this.user.getCartItem().subscribe((res) => {
+      console.log(res)
+      this.cart = res['result']
+      console.log(this.cart);
+    }, (error) => {
+      console.log(error)
+    })
+  }
+
+  displayItem() {
+    this.user.getWishlistItem().subscribe((res) => {
+      console.log(res)
+      this.wish = res['result']
+      console.log(this.wish);
+    }, (error) => {
+      console.log(error)
+    })
+  }
+
+  buttonChange(id: any){
+      let result = this.cart.find((value) => {
+        console.log(value.product_id._id == id);
+        return value.product_id._id == id;
+      })
+      return result;
+  }
+
+  changeButton(id: any){
+    let result = this.wish.find((value) => {
+      console.log(value.product_id._id == id);
+      return value.product_id._id == id;
+    })
+    return result;
   }
 }

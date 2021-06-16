@@ -29,6 +29,7 @@
 }
 
 .sectiontwo{
+    position: relative;
     width: 97%;
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +47,7 @@
 }
 
 .imgCls{
-    position: relative;
+    // position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +158,8 @@
     position: absolute;
     background:white;
     color:black;
-    margin-top: 50%;
+    margin-top: 10%;
+    margin-left: 37%;
     font-family: sans-serif;
     opacity: 1;
     visibility: hidden;
@@ -171,9 +173,9 @@
    }
    
    .imgCls:hover div{
-    width: 110%;
+    width: 20%;
     height: max-content;
-    padding: 8%;
+    padding: 1%;
     visibility: visible;
     opacity: 1; 
     border: 1px solid gray;
@@ -182,6 +184,7 @@
 
    .headsss{
        font-size: large;
+       font-weight: 500;
    }
 
    .parass{

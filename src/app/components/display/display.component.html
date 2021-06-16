@@ -21,7 +21,8 @@
                         your book achieve its greatest potential discoverability. Readers,
                         librarians, and retailers can't purchase a book they can't find, and your book metadata
                         is responsible for whether or not your book pops up when they type in search terms relevant to
-                        your book.
+                        your book.There are several things to consider in order to help
+                        your book achieve its greatest potential discoverability.
                     </p>
                 </div>
             </div>
@@ -33,16 +34,16 @@
                 <div class="price">
                     Rs. {{book.price}}
                 </div>
-                <div class="buttons" *ngIf="buttonChange()">
+                <div class="buttons" *ngIf="!buttonChange(book._id) && !changeButton(book._id)">
                     <button (click)="addToCart(book)" class="btn">Add to Cart</button>
                     <button (click)="addToWishList(book)" class="btn1">Wishlist</button>
                 </div>
-                <!-- <div class="button1" *ngIf="!buttonChange()">
+                <div class="button1" *ngIf="buttonChange(book._id)">
                     <button class="btn2">Added to Cart</button>
                 </div>
-                <div class="button1" *ngIf="!buttonChange()">
+                <div class="button1" *ngIf="changeButton(book._id)">
                     <button class="btn3">Added to Wishlist</button>
-                </div> -->
+                </div>
             </div>
         </div>
     </div>
