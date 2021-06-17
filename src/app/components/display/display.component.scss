@@ -158,7 +158,7 @@
     background:white;
     color:black;
     margin-left: 37%;
-    margin-top: 8%;
+    margin-top: 13.5%;
     font-family: sans-serif;
     opacity: 1;
     visibility: hidden;
@@ -196,3 +196,13 @@
       align-items: center;
       padding-top: 2%;
    }
+
+   @media screen and (max-width: 400px) {
+    .container{
+        height: 85%;
+    }
+    
+    .sectiontwo{
+        padding-top: 5%;
+    }
+}

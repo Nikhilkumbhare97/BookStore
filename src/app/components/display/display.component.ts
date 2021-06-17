@@ -28,6 +28,7 @@ export class DisplayComponent implements OnInit {
 
   totalLength: any;
   page: number = 1;
+  quantity: number = 10;
 
   @Input() searchText: string;
 

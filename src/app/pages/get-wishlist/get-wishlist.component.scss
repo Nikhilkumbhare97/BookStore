@@ -90,3 +90,24 @@
     padding-top: 5%;
     padding-left: 15%;
 }
+
+.material-icons-outlined:hover{
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 500px) {
+    .container{
+        height: 85%;
+    }
+
+    .place{
+        margin: 0%;
+        width: 100%;
+    }
+
+    .material-icons-outlined{
+        padding-top: 15%;
+        padding-left: 10%;
+    }
+}

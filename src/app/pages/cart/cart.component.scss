@@ -71,6 +71,10 @@
     padding-top: 2%;
     font-weight: 500;
 }
+
+.iconss:hover{
+    cursor: pointer;
+}
 // .icons{
 //     padding-left: 5%;
 //     color: black;
@@ -201,4 +205,59 @@
 .example-full-widths{
     width: 160%;
     color: black;
+}
+
+@media screen and (max-width: 500px) {
+    .main-place{
+        height: 85%;
+    }
+
+    .cardbox{
+        width: 50%;
+        flex-direction: row;
+    }
+
+    .place{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .undisplayed{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .parttwo{
+        width: 50%;
+        flex-direction: column;
+    }
+
+    .detail{
+        width: 70%;
+    }
+
+    .btn{
+        width: 50%;
+    }
+
+    .customerpart{
+        width: 100%;
+        padding-bottom: 5%;
+    }
+
+    .radios{
+        width: 70%;
+    }
+
+    .text{
+        flex-direction: column;
+    }
+
+    .example-full-width{
+        width: 160%;
+    }
+
+    .form-block{
+        width: 72%;
+    }
 }

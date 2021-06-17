@@ -12,7 +12,7 @@
         </section>
     </div>
     <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" class="sectiontwo">
-        <div *ngFor='let book of bookArray | search : searchText | paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalLength }'
+        <div *ngFor='let book of bookArray | search : searchText | paginate: { itemsPerPage: quantity, currentPage: page, totalItems: totalLength }'
             class="content-card">
             <div class="imgCls" fxLayout="column" fxLayoutAlign="center center">
                 <img src="../.../../../../assets/BookImage/Image 11@2x.png" class="bookImg" alt="abc">

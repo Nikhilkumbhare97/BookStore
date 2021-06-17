@@ -50,7 +50,9 @@ input{
 }
 
 
-@media screen and (max-width: 470px) {
-    
-    
+@media screen and (max-width: 1050px) {
+
+    #login-form{
+        padding-bottom: 10%;
+    }
 }

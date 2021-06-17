@@ -121,26 +121,32 @@
 
 @media screen and (max-width: 470px) {
     
-    .search{
+    .searchs{
         display: none;
     }
 }
 @media screen and (max-width: 620px) {
-    .search{
+    .searchs{
         width: 50px;
     }
 }
-@media screen and (max-width: 400px) {
-    .search{
+@media screen and (max-width: 500px) {
+    .searchs{
         display: none;
     }
-    .main-container{
+    .toolbar{
         width: 100%;
+        height: 8%;
+    }
+
+    .lastpart{
+        width: 25%;
+        justify-content: space-around;
     }
 }
 @media screen and (max-width: 800px) {
     
-    .search{
+    .searchs{
         width: 100px;
     }
 }
@@ -149,7 +155,7 @@
     .image{
         display: none;
     }
-    .main-container{
+    .toolbar{
         width: 100%;
     }
 }
