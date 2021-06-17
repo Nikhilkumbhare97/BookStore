@@ -5,14 +5,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(items: any[], searchText: string): any[] {
-    if (!items) return [];
-    if (!searchText) return items;
+  transform(value: any, searchText: string) {
+   if (value.length == 0 || searchText == ''){
+      return value;
+   }
 
-    searchText = searchText.toLowerCase();
-    
-    return items.filter(it => {
-      return it.toLowerCase().includes(searchText);
-    });
+   const books = [];
+   for (const book of value) {
+     console.log(book)
+     if (book['bookName'] === searchText) {
+       books.push(book);
+     }
+   }
+
+   return books;
+
   }
 }

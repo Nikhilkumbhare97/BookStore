@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,18 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  searchword: String;
 
   constructor(private router: Router) { }
 
   @Input() childMessage;
   @Input() childMessages;
-  
+
   ngOnInit(): void {
     console.log(this.childMessage)
     console.log(this.childMessages)
   }
 
-  redirect(){
+  redirect() {
     this.router.navigate(['/dashboard'])
+  }
+
+  @Output() searchcriteria = new EventEmitter<String>();
+  searchThis() {
+    this.searchcriteria.emit(this.searchword)
   }
 }

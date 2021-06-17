@@ -7,6 +7,8 @@ import { UserService } from 'src/app/service/userService/user.service';
   styleUrls: ['./dash-board.component.scss']
 })
 export class DashBoardComponent implements OnInit {
+  message: any;
+  searchWord: any;
 
   constructor(private user: UserService) { }
 
@@ -29,4 +31,11 @@ export class DashBoardComponent implements OnInit {
       console.log(error)
     })
   }
+
+  searchThis($event){
+    this.message = $event;
+    this.searchWord = this.message;
+    console.log(this.searchWord);
+  }
+
 }

@@ -2,7 +2,7 @@
     <div class="form-group" fxLayout="row" fxLayoutAlign="start center">
         <clr-input-container class="input-container">
             <label>Email Id</label>
-            <input  clrInput formControlName="email" placeholder="Enter Email" name="email">
+            <input  clrInput formControlName="email" placeholder="Enter Email" name="emails" size="28">
             <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
         </clr-input-container>
     </div>
@@ -10,7 +10,7 @@
     <div class="form-group" fxLayout="row" fxLayoutAlign="start center">
         <clr-password-container class="input-container">
             <label>Pasword</label>
-            <input clrPassword placeholder="Enter Password" formControlName="password" name="password">
+            <input clrPassword placeholder="Enter Password" formControlName="password" name="passwords">
             <clr-control-error *clrIfError="'required'">This field is required!</clr-control-error>
             <clr-control-error *clrIfError="'minlength'">It must be at least 8 characters!
             </clr-control-error>

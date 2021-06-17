@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/service/userService/user.service';
 
@@ -28,6 +28,8 @@ export class DisplayComponent implements OnInit {
 
   totalLength: any;
   page: number = 1;
+
+  @Input() searchText: string;
 
   openSnackBar(message: string, duration: number) {
     let config = new MatSnackBarConfig();

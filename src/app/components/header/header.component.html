@@ -5,7 +5,7 @@
             <span class="text" (click)="redirect()">BookStore</span>
         </div>
         <div class="SearchButton">
-            <input type="text" class="searchs" placeholder="&#xf002;  Search...">
+            <input type="text" class="searchs" [(ngModel)]="searchword"(input)="searchThis()" placeholder="&#xf002;  Search...">
         </div>
         <div class="lastpart">
             <figure class="profilediv">
